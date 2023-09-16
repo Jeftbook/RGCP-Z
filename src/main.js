@@ -7,13 +7,14 @@ const { CreateUser, ReadUser, UpadteUser, DeleteUser } = require('./database/dat
 app.use(express.json());
 app.use(cors());
 
+//Enviar datos
 app.post('/users', (req, res) => {
     const nombre = req.body.nombre;
     const apellido = req.body.apellido;
 
     console.log('AlgoPost');
     
-    CreateUser(, (err) => {
+    CreateUser(nombre, apellido, (err) => {
         if (err) {
             console.error(err);
         } else {
@@ -22,6 +23,7 @@ app.post('/users', (req, res) => {
     })
 });
 
+//Pedir datos
 app.get('/users', (req, res) => {
     
     console.log('AlgoGet');
@@ -35,6 +37,7 @@ app.get('/users', (req, res) => {
     });
 });
 
+//Eliminar datos respecto al id
 app.delete('/users/:id', (req, res) => {
     DeleteUser(id, (err) => {
         if (err) {
@@ -45,6 +48,7 @@ app.delete('/users/:id', (req, res) => {
     })
 });
 
+//Actualizar datos
 app.put();
 
 
