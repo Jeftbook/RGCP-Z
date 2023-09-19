@@ -3,8 +3,8 @@ const db = new sqlite3.Database('./database/database_RGCP.db');
 
 
 //Guarda la info del nuevo usuario en la base de datos
-function CreateUser(callback){
-    db.run("INSERT INTO ser_parte_usuarios () VALUES (?, ?)", [], callback);
+function CreateUser(email, nombre, apellido, telefono, ser_parte_como, nombre_institucion, tipo_institucion, desarrolla_su_tare_como, callback){
+    db.run("INSERT INTO ser_parte_usuarios (email, nombre, apellido, telefono, ser_parte_como, nombre_institucion, tipo_institucion, desarrolla_su_tare_como) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [email, nombre, apellido, telefono, ser_parte_como, nombre_institucion, tipo_institucion, desarrolla_su_tare_como], callback);
 }
 
 //Trae los datos del usuario de la base de datos
@@ -13,7 +13,7 @@ function ReadUser(callback) {
 }
 
 //Actualiza los datos del usario en la base de datos
-function UpadteUser(callback) {
+function UpadteUser(email, nombre, apellido, telefono, id, callback) {
     db.run("UPADTE ser_parte_usuarios SET email = ?, nombre = ?, apellido = ?, telefono = ? WHERE rowid = ?", [email, nombre, apellido, telefono, id], callback)
 }
 
