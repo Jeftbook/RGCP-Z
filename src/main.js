@@ -37,6 +37,18 @@ app.get('/users', (req, res) => {
     });
 });
 
+//Actualizar datos
+app.put('users/:id', (req, res) => {
+
+    UpadteUser([email, nombre, apellido, telefono, ser_parte_como, nombre_institucion, tipo_institucion, desarrolla_su_tare_como], (err) => {
+        if(err){
+            res.status(500).send(err.message);
+        } else {
+            res.status(200).send('Usuario actualizado correctamente');
+        }
+    });
+});
+
 //Eliminar datos respecto al id
 app.delete('/users/:id', (req, res) => {
     DeleteUser(id, (err) => {
@@ -47,9 +59,6 @@ app.delete('/users/:id', (req, res) => {
         }
     })
 });
-
-//Actualizar datos
-app.put();
 
 
 app.listen(3000, () => {
