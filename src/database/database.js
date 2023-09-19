@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./database/database_RGCP.db');
+const db = new sqlite3.Database('./database_RGCP.db');
 
 
 //Guarda la info del nuevo usuario en la base de datos
