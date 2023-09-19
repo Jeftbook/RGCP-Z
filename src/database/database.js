@@ -13,8 +13,8 @@ function ReadUser(callback) {
 }
 
 //Actualiza los datos del usario en la base de datos
-function UpadteUser() {
-    
+function UpadteUser(callback) {
+    db.run("UPADTE ser_parte_usuarios SET email = ?, nombre = ?, apellido = ?, telefono = ? WHERE rowid = ?", [email, nombre, apellido, telefono, id], callback)
 }
 
 //Elimina al usuario de la base de datos
