@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "email": "a@a.com",
+        "nombre": "Juan",
+        "apellido": "Galvan",
+        "telefono": 3541,
+        "ser_parte_como": "qsyo",
+        "nombre_institucion": "algo",
+        "tipo_institucion": "isor",
+        "desarrolla_su_tare_como": "Tecnico"
+    }
+]
