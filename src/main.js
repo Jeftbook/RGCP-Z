@@ -32,7 +32,8 @@ app.get('/users', (req, res) => {
         if (err) {
             res.status(500).send(err.message);
         } else {
-            res.json(rows);
+            // res.json(rows);
+            res.send("Hola mundo " + rows[0].id);
         }
     });
 });
