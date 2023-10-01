@@ -1,11 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const path = require('path');
+
 
 const { CreateUser, ReadUser, UpadteUser, DeleteUser } = require('./database/database');
 
 app.use(express.json());
 app.use(cors());
+
+app.get('/', (req, res) =>{
+    res.sendFile(path.resolve(__dirname, 'pages/index.html'));
+});
 
 //Enviar datos
 app.post('/users', (req, res) => {
