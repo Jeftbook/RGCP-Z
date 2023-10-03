@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">Editar usuario</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{usuario.id}}" method="post">
+                        <div class="input-group mt-2">
+                            <label for="email" class="input-group-text">Email</label>
+                            <input class="form-control" type="text" name="email" id="email" value="{{usuario.email}}"
+                                placeholder="Ejemplo: algo@mail.com" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="nombre" class="input-group-text">Nombre</label>
+                            <input class="form-control" type="text" name="nombre" id="nombre"
+                                placeholder="Ejemplo: Luis Angel" value="{{usuario.nombre}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="apellido" class="input-group-text">Apellido</label>
+                            <input class="form-control" type="text" name="apellido" id="apellido" value="{{usuario.apellido}}"
+                                placeholder="Ejemplo: Garcia" required>
+                        </div>
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
